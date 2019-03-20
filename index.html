@@ -7,21 +7,89 @@
   <title>Ticker</title>
 
  <style>
-  * {
-    color: white;
-    background: clear;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
   }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.ticker-wrap {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  box-sizing: content-box;
+  height: 100vh;
+  overflow: hidden;
+  padding-left: 100%;
+  position: fixed;
+  width: 100%
+}
+
+.ticker-wrap .ticker {
+    animation-duration: 200s;
+    animation-iteration-count: infinite;
+    animation-name: ticker;
+    animation-timing-function: linear;
+    box-sizing: content-box;
+    display: inline-block;
+    height: 100vh;
+    padding-right: 100%;
+    white-space: nowrap;
+  }
+
+.ticker-wrap .ticker-item {
+    color: white;
+    font-family: "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    display: inline-block;
+    font-size: 1.7rem;
+    padding: 0 2rem;
+    line-height: 100vh;
+  }
+
+.ticker-wrap h3 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1.7rem;
+    letter-spacing: 0.2em;
+  }
+
  </style>
 
 </head>
 
 <body>
-<h1>Hello World!</h1>
-<p>Test 2</p>
-<p>Test 2</p>
-<p>Test 2</p>
-<p>Test 2</p>
-<p>Test 2</p>
-<p>Test 2</p>
+<div class="ticker-wrap">
+    <div class="ticker">
+      <div class="ticker-item"><h3>Latest Lookups</h3></div>
+    
+      <div class="ticker-item">
+        <strong> 断罪 </strong>【だんざい】→ judgment (of a crime)
+      </div>
+    
+      <div class="ticker-item">
+        <strong> 粗末 </strong>【そまつ】→ crude, rough, plain, humble, shabby.
+      </div>
+    
+      <div class="ticker-item">
+        <strong> 襤褸家 </strong>【ぼろや】→ run-down shabby house.
+      </div>
+    
+    </div>
+  </div>
 </body>
 </html>
